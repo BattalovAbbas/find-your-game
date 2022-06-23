@@ -7,7 +7,7 @@ module.exports = {
     entry: './src/index.js',
     devtool: "source-map",
     output: {
-        filename: 'bundle.js',
+        filename: 'index.js',
         path: path.resolve(__dirname, 'build'),
     },
     plugins: [
@@ -18,4 +18,12 @@ module.exports = {
             filename: 'index.html',
         }),
     ],
+    module: {
+        rules: [
+            {
+                test: /\.css$/i,
+                use: ["style-loader", "css-loader"],
+            },
+        ],
+    },
 };
