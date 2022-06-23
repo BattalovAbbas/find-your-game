@@ -1,9 +1,11 @@
 (function () {
     if (window.Telegram.WebApp) {
         window.Telegram.WebApp.ready();
-        const div = document.getElementById('name');
-        div.textContent = window.Telegram.WebApp.WebAppInitData.user.first_name;
-        console.log(window.Telegram.WebApp.WebAppInitData);
+        const name = document.getElementById('name');
+        const photo = document.getElementById('photo');
+        name.textContent = window.Telegram.WebApp.initDataUnsafe.user.first_name;
+        photo.src = window.Telegram.WebApp.initDataUnsafe.user.photo_url;
+        console.log(window.Telegram.WebApp.initDataUnsafe);
     } else {
         console.error("window.Telegram.WebApp not found")
     }
