@@ -5,8 +5,4 @@ const Page = require("./page.jsx");
 ReactDOM.createRoot(
     document.getElementById("app")
 )
-.render(
-    <div>
-        <Page />
-    </div>
-);
+.render(<Page />);
